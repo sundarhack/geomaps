@@ -165,7 +165,7 @@ const bindTextEditor = (layer) => {
         mapRef.current = null;
       }
     };
-  }, []);
+  }, [defaultBounds]);
 
   return (
     <>
