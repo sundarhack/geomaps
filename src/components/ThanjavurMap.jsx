@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet-draw/dist/leaflet.draw.css";
@@ -10,10 +10,10 @@ const ThanjavurMap = () => {
   const userDrawnItemsRef = useRef(new L.FeatureGroup()); 
   const [loading, setLoading] = useState(true);
 
-  const defaultBounds = [
-    [10.5, 78.9], 
-    [10.85, 79.3], 
-  ];
+  const defaultBounds = useMemo(() => [
+    [10.5, 78.9],
+    [10.85, 79.3]
+  ], []);
 
   useEffect(() => {
     if (mapRef.current) {
